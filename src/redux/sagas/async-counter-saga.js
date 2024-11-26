@@ -17,7 +17,7 @@ function* asyncDecrement() {
 
 function* asyncCounterSaga() {
     yield takeLatest(counterSagaActionTypes.ASYNC_INCREMENT, asyncIncrement) // this will reset the increment timer if you click async increment before it finishes
-    yield takeEvery(counterSagaActionTypes.ASYNC_DECREMENT, asyncDecrement)
+    yield takeLatest(counterSagaActionTypes.ASYNC_DECREMENT, asyncDecrement)
 }
 
 export default asyncCounterSaga;
